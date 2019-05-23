@@ -1,0 +1,66 @@
+{
+	"name": "zip-text-nodes",
+	"description": "Merge the DOM of 2 elements with the same textContent",
+	"version": "0.0.0",
+	"repository": "bfred-it/zip-text-nodes",
+	"license": "MIT",
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"merge",
+		"dom",
+		"assign",
+		"element",
+		"textnode",
+		"browser"
+	],
+	"devDependencies": {
+		"@babel/core": "^7.4.5",
+		"@babel/plugin-transform-react-jsx": "^7.3.0",
+		"@sindresorhus/tsconfig": "^0.3.0",
+		"@typescript-eslint/eslint-plugin": "^1.9.0",
+		"ava": "^1.4.1",
+		"babelify": "^10.0.0",
+		"browserify": "^16.2.3",
+		"dom-chef": "^3.6.0",
+		"eslint-config-xo-typescript": "^0.12.0",
+		"npm-run-all": "^4.1.5",
+		"tape": "^4.10.1",
+		"tape-run": "^6.0.0",
+		"typescript": "^3.4.5",
+		"xo": "*"
+	},
+	"scripts": {
+		"test": "npm-run-all --silent prepare --parallel test:*",
+		"test:lint": "xo",
+		"test:blink": "browserify -t [ babelify --plugins [ @babel/plugin-transform-react-jsx ] ] test.js | tape-run",
+		"test:gecko": "if [ $CI ]; then browserify test.js | tape-run --browser firefox; fi",
+		"prepare": "tsc",
+		"build": "tsc",
+		"watch": "tsc --watch"
+	},
+	"xo": {
+		"extensions": [
+			"ts"
+		],
+		"envs": [
+			"browser"
+		],
+		"rules": {
+			"no-unused-vars": [
+				"error",
+				{
+					"varsIgnorePattern": "^React$"
+				}
+			]
+		},
+		"overrides": [
+			{
+				"files": "**/*.ts",
+				"extends": "xo-typescript"
+			}
+		]
+	}
+}
