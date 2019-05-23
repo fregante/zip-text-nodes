@@ -48,15 +48,14 @@ function getSmartIndexRange(node: Node & ParentNode, start: number, end: number)
 /**
  * @example
  *
- * Merge two almost-identical elements like:
+ * Merge two elements like:
  * <div>a, <X>b</X>, c</div>
  * and:
  * <div>a, b, <X>c</X></div>
  * into:
  * <div>a, <X>b</X>, <X>c</X></div>
  *
- * Useful when `target` is subject to transforms that lose
- * its elements and you want to restore them.
+ * Useful when `target` is subject to transforms that lose its elements and you want to restore them.
  */
 export = function (target: Node & ParentNode, source: Node & ParentNode): void {
 	if (target.textContent !== source.textContent) {
