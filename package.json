@@ -1,7 +1,7 @@
 {
 	"name": "zip-text-nodes",
 	"description": "Merge the DOM of 2 elements with the same textContent",
-	"version": "0.0.0",
+	"version": "1.0.0-0",
 	"repository": "bfred-it/zip-text-nodes",
 	"license": "MIT",
 	"files": [
