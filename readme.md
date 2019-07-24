@@ -1,4 +1,4 @@
-# zip-text-nodes [![Build Status](https://api.travis-ci.com/bfred-it/zip-text-nodes.svg?branch=master)](https://travis-ci.com/bfred-it/zip-text-nodes)
+# zip-text-nodes [![Build Status](https://api.travis-ci.com/fregante/zip-text-nodes.svg?branch=master)](https://travis-ci.com/fregante/zip-text-nodes)
 
 > Merge the DOM of 2 elements with the same textContent.
 
@@ -71,6 +71,6 @@ The element from which the new children are copied.
 
 # Related
 
-- [insert-text-textarea](https://github.com/bfred-it/insert-text-textarea) - Insert text in a textarea (supports Firefox and Undo).
-- [fit-textarea](https://github.com/bfred-it/fit-textarea) - Automatically expand a `<textarea>` to fit its content, in a few bytes.
-- [delegate-it](https://github.com/bfred-it/delegate-it) - DOM event delegation, in <1KB.
+- [insert-text-textarea](https://github.com/fregante/insert-text-textarea) - Insert text in a textarea (supports Firefox and Undo).
+- [fit-textarea](https://github.com/fregante/fit-textarea) - Automatically expand a `<textarea>` to fit its content, in a few bytes.
+- [delegate-it](https://github.com/fregante/delegate-it) - DOM event delegation, in <1KB.

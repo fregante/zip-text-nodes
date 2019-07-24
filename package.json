@@ -1,21 +1,53 @@
 {
 	"name": "zip-text-nodes",
-	"description": "Merge the DOM of 2 elements with the same textContent",
 	"version": "1.0.0-1",
-	"repository": "bfred-it/zip-text-nodes",
+	"description": "Merge the DOM of 2 elements with the same textContent",
+	"keywords": [
+		"assign",
+		"browser",
+		"dom",
+		"element",
+		"merge",
+		"textnode"
+	],
+	"repository": "fregante/zip-text-nodes",
 	"license": "MIT",
 	"files": [
 		"index.js",
 		"index.d.ts"
 	],
-	"keywords": [
-		"merge",
-		"dom",
-		"assign",
-		"element",
-		"textnode",
-		"browser"
-	],
+	"scripts": {
+		"build": "tsc",
+		"build-test": "browserify -t [ babelify --plugins [ @babel/plugin-transform-react-jsx ] ] test.js > .test.js",
+		"prepare": "tsc",
+		"test": "npm-run-all --silent prepare build-test --parallel test:*",
+		"test:blink": "cat .test.js | tape-run",
+		"test:gecko": "if [ $CI ]; then cat .test.js | tape-run --browser firefox; fi",
+		"test:lint": "xo",
+		"watch": "tsc --watch"
+	},
+	"xo": {
+		"envs": [
+			"browser"
+		],
+		"extensions": [
+			"ts"
+		],
+		"overrides": [
+			{
+				"files": "**/*.ts",
+				"extends": "xo-typescript"
+			}
+		],
+		"rules": {
+			"no-unused-vars": [
+				"error",
+				{
+					"varsIgnorePattern": "^React$"
+				}
+			]
+		}
+	},
 	"devDependencies": {
 		"@babel/core": "^7.4.5",
 		"@babel/plugin-transform-react-jsx": "^7.3.0",
@@ -31,37 +63,5 @@
 		"tape-run": "^6.0.0",
 		"typescript": "^3.4.5",
 		"xo": "*"
-	},
-	"scripts": {
-		"test": "npm-run-all --silent prepare build-test --parallel test:*",
-		"test:lint": "xo",
-		"build-test": "browserify -t [ babelify --plugins [ @babel/plugin-transform-react-jsx ] ] test.js > .test.js",
-		"test:blink": "cat .test.js | tape-run",
-		"test:gecko": "if [ $CI ]; then cat .test.js | tape-run --browser firefox; fi",
-		"prepare": "tsc",
-		"build": "tsc",
-		"watch": "tsc --watch"
-	},
-	"xo": {
-		"extensions": [
-			"ts"
-		],
-		"envs": [
-			"browser"
-		],
-		"rules": {
-			"no-unused-vars": [
-				"error",
-				{
-					"varsIgnorePattern": "^React$"
-				}
-			]
-		},
-		"overrides": [
-			{
-				"files": "**/*.ts",
-				"extends": "xo-typescript"
-			}
-		]
 	}
 }
