@@ -1,6 +1,6 @@
 {
 	"name": "zip-text-nodes",
-	"version": "1.0.0-1",
+	"version": "1.0.0",
 	"description": "Merge the DOM of 2 elements with the same textContent",
 	"keywords": [
 		"assign",
