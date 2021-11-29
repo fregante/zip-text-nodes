@@ -1,4 +1,7 @@
-# zip-text-nodes [![Build Status](https://api.travis-ci.com/fregante/zip-text-nodes.svg?branch=master)](https://travis-ci.com/fregante/zip-text-nodes)
+# <img align="right" width="350" src="https://user-images.githubusercontent.com/1402241/143927245-d92f27a8-a3c5-4195-a29a-bfea2271023d.png"> zip-text-nodes [![][badge-gzip]][link-bundlephobia]
+
+[badge-gzip]: https://img.shields.io/bundlephobia/minzip/zip-text-nodes.svg?label=gzipped
+[link-bundlephobia]: https://bundlephobia.com/result?p=zip-text-nodes
 
 > Merge the DOM of 2 elements with the same textContent.
 
